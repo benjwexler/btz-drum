@@ -23,8 +23,8 @@ const KitchenSink = () => {
         <div id="topSectionLeft" class="col-sm-7 col-md-7 col-lg-6 d-none d-sm-block">
           <TopLeftControls />
                 </div>
-                <div id="topSectionMiddle" class="col-sm-5 col-md-5 col-lg-4 d-none d-sm-block">
-                  Just Blaze
+                <div id="topSectionMiddle" className="col-sm-5 col-md-5 col-lg-4 d-none d-sm-flex">
+                  <div className="m-auto pb-1">Just Blaze</div>
                 </div>
                 <div id="topSectionRight" class="col-lg-2 d-none d-lg-block">
                   <div id="tempoTop">

@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
+    "lodash.clonedeep": "^4.5.0",
     "lodash.invert": "^4.3.0",
+    "lodash.invertby": "^4.7.0",
+    "lodash.pick": "^4.4.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
