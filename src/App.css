@@ -220,13 +220,12 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
 }
 
 #tempoTop {
-    height: 25%;
+    /* height: 25%; */
     width: 100%;
     text-align: center;
     color: white;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 22px;
-
+    font-size: 18px;
+    /* padding-top: 7px; */
 }
 
 #setTempo {
@@ -235,12 +234,13 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     text-align: center;
     color: rgb(255, 255, 255);
     margin: auto;
+    padding-bottom: 11px;
     
 }
 
 .backgroundBlack { 
-    /* background: rgba(255, 255, 255, 0.863); */
-    background: #00d7d752;
+    background: rgba(255, 255, 255, 0.863);
+    /* background: #00d7d752; */
     /* background: #00d7d7d3;
     background: rgba(255, 255, 0, 0.719); */
 }
@@ -252,7 +252,7 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     border-radius: 10%;
     margin-top: 10px;
     padding-left: 18px;
-    border: 5px solid black;
+    border: 3px solid black;
     font-size: 40px;
     font-family: 'Orbitron', sans-serif;
     background: linear-gradient(to bottom, rgba(34, 43, 164, 0.486) 7%, rgba(34, 43, 164, 0.274) 88%);
@@ -275,6 +275,7 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     border-radius: 10%;
     opacity: .9;
     box-shadow: 10px 10px solid rgb(92, 33, 33) !important;
+    padding-top: 10px;
 }
 
 #changeKitContainer {
@@ -294,8 +295,8 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
 }
 
 #previousKitText {
-    height: 30%;
-    width: 100%;    
+    height: 25%;
+    width: 100%;
 }
 
 #mainMiddleBottom{
@@ -312,6 +313,7 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding-top: 10px;
 }
 #changeKit {
     height: 100%;
@@ -320,6 +322,7 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding-top: 10px;
 }
 
 #youtubeVid {
@@ -434,6 +437,7 @@ iframe {
     border-radius: 10%;
     border-top-right-radius: 15%;
     box-shadow: 1px 1px rgb(28, 139, 125);
+    box-shadow: 1px 1px rgba(255, 255, 255, 0.308);
 
 }
 .padsRow2 {

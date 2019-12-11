@@ -1,9 +1,7 @@
 
-
-import React, { useContext, useEffect, useState, useRef } from 'react';
-import cx from 'classnames';
+import React, { useContext, useEffect, useState } from 'react';
 import Pad from './Pad';
-import { Context } from './Context';
+import { Context } from '../Context';
 import useEvent from 'use-add-event';
 import Tone from "tone";
 
@@ -42,118 +40,80 @@ const _masterPadObj = {
   1: {
     soundfile: "./sounds/Kick.wav",
     keyCode: 1,
-    isActive: false,
-    isKeyDown: false,
   },
   2: {
     soundfile: "./sounds/hat.wav",
     keyCode: 2,
-    isActive: false,
-    isKeyDown: false,
   },
   3: {
-    soundfile: "./sounds/Kick.wav",
+    soundfile: "./sounds/snare2.wav",
     keyCode: 3,
-    isActive: false,
-    isKeyDown: false,
   },
   4: {
     soundfile: "./sounds/Kick.wav",
     keyCode: 4,
-    isActive: false,
-    isKeyDown: false,
   },
   5: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "Q",
-    isActive: false,
-    isKeyDown: false,
   },
   6: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "W",
-    isActive: false,
-    isKeyDown: false,
   },
   7: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "E",
-    isActive: false,
-    isKeyDown: false,
   },
   8: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "R",
-    isActive: false,
-    isKeyDown: false,
   },
   9: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "A",
-    isActive: false,
-    isKeyDown: false,
   },
   10: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "S",
-    isActive: false,
-    isKeyDown: false,
   },
   11: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "D",
-    isActive: false,
-    isKeyDown: false,
   },
   12: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "F",
-    isActive: false,
-    isKeyDown: false,
   },
   13: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "Z",
-    isActive: false,
-    isKeyDown: false,
   },
   14: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "X",
-    isActive: false,
-    isKeyDown: false,
   },
   15: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "C",
-    isActive: false,
-    isKeyDown: false,
   },
   16: {
     soundfile: "./sounds/Kick.wav",
     keyCode: "V",
-    isActive: false,
-    isKeyDown: false,
   },
 }
-
 
 const PadsSection = () => {
   const {
     isKeyMapOn,
-    setIsKeyMapOn,
     isBeatRepeatOn,
-    setIsBeatRepeatOn,
     beatRepeatVal,
-    setBeatRepeatVal
   } = useContext(Context);
 
   const [activeKeyMapPad, setActiveKeyMapPad] = useState(false);
   const [keyToPadObj, setKeyToPadObj] = useState({});
   const [masterPadObj, setMasterPadObj] = useState(_masterPadObj);
   const [toggle, setToggle] = useState(false);
-
-
 
   useEffect(() => {
 
@@ -164,22 +124,31 @@ const PadsSection = () => {
     sampler = new Tone.Players(soundfilesObj, () => {
     }).toMaster();
     transport = Tone.Transport;
+    Tone.Transport.bpm.value = 80;
   }, []);
 
+
   const createSequence = (pad) => {
-    masterPadObj[pad].sequence = new Tone.Sequence(function (time, note) {
+    masterPadObj[pad].sequence = new Tone.Sequence(function (time, shouldPlay) {
+      if (!shouldPlay) {
+        setMasterPadObj(masterPadObj);
+        setToggle(!toggle)
+        return;
+      }
       sampler.get(pad).start()
-      console.log('beatRepeatVal', beatRepeatVal)
-    }, ["C4", "E4", "G4", "A4"], `${beatRepeatVal}n`);
+      setMasterPadObj(masterPadObj);
+    }, [true, false], `${beatRepeatVal * 2}n`);
     masterPadObj[pad].sequence.start();
     transport.start()
   }
+
 
   const stopSequence = (pad) => {
     if (masterPadObj[pad].sequence) {
       masterPadObj[pad].sequence.stop()
     }
   }
+
 
   const reinitizalieSequenceWithNewLoop = (pad) => {
     if (masterPadObj[pad].sequence) {
@@ -191,12 +160,14 @@ const PadsSection = () => {
     }
   }
 
+
   useEffect(() => {
     const keys = Object.keys(masterPadObj);
     keys.forEach(pad => {
       reinitizalieSequenceWithNewLoop(pad)
     })
-  }, [beatRepeatVal ]);
+  }, [beatRepeatVal]);
+
 
   const handleKeyDown = (ev) => {
     const keyCode = String.fromCharCode(ev.keyCode);
@@ -206,7 +177,6 @@ const PadsSection = () => {
         masterPadObj[activeKeyMapPad].keyCode = keyCode;
         setMasterPadObj(masterPadObj);
       }
-      
       return setToggle(!toggle)
     }
 
@@ -216,12 +186,6 @@ const PadsSection = () => {
         if (!isBeatRepeatOn && !masterPadObj[pad].isInitialized) {
           sampler.get(pad).start()
         } else {
-          masterPadObj[pad].isActive = true;
-          if(!masterPadObj[pad].beatRepeatCount) {
-            masterPadObj[pad].beatRepeatCount = 1
-          } else {
-            masterPadObj[pad].beatRepeatCount+=1
-          }
           if (!masterPadObj[pad].isInitialized) {
             createSequence(pad)
           }
@@ -234,13 +198,28 @@ const PadsSection = () => {
     }
   };
 
-  const handleKeyUp = (ev) => {
+  const handleMouseDown = (ev) => {
+    const pad = ev.currentTarget.id;
+    sampler.get(pad).start();
+    masterPadObj[pad].isKeyDown = true;
+    setMasterPadObj(masterPadObj);
+    setToggle(!toggle)
+  };
+
+  const handleMouseUp = (ev) => {
+    const pad = ev.currentTarget.id;
+    masterPadObj[pad].isKeyDown = false;
+    setMasterPadObj(masterPadObj);
+    setToggle(!toggle)
+  };
+
+
+
+  const handleKeyUp = (ev, ) => {
     const keyCode = String.fromCharCode(ev.keyCode);
     const pads = keyToPadObj[keyCode];
     if (pads) {
       pads.forEach(pad => {
-        masterPadObj[pad].beatRepeatCount = 0;
-        masterPadObj[pad].isActive = false;
         masterPadObj[pad].isKeyDown = false;
         masterPadObj[pad].isInitialized = false;
         stopSequence(pad)
@@ -248,8 +227,8 @@ const PadsSection = () => {
       setMasterPadObj(masterPadObj);
       setToggle(!toggle)
     }
-
   }
+
 
   const createKeyCodeObj = () => {
     const keysToObj = {}
@@ -265,6 +244,7 @@ const PadsSection = () => {
     setKeyToPadObj(keysToObj)
   }
 
+
   useEffect(() => {
     if (!isKeyMapOn) {
       createKeyCodeObj();
@@ -273,15 +253,8 @@ const PadsSection = () => {
   }, [isKeyMapOn]);
 
 
-
   useEvent('keydown', handleKeyDown);
   useEvent('keyup', handleKeyUp);
-
-  const [isActive, setIsActive] = useState(false)
-
-  const checkIfPadActive = (pad) => {
-    return masterPadObj[pad].isActive
-  }
 
   return (
     <div className="d-flex h-100 flex-wrap">
@@ -295,18 +268,18 @@ const PadsSection = () => {
               className="padsRow1"
               style={getPadStyling(pad)}
               isKeyMapOn={isKeyMapOn}
-              isActive={masterPadObj[pad].isActive}
+              isInitialized={masterPadObj[pad].isInitialized}
               isBeatRepeatOn={isBeatRepeatOn}
-              beatRepeatCount={masterPadObj[pad].beatRepeatCount}
               activeKeyMapPad={activeKeyMapPad}
               isKeyDown={masterPadObj[pad].isKeyDown}
-              transport={transport}
               onClick={() => {
                 if (isKeyMapOn) {
                   return setActiveKeyMapPad(pad)
                 }
               }
               }
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
             />
           )
         })
