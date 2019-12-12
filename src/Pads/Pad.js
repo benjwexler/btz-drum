@@ -9,37 +9,18 @@ const Pad = ({ id,
   onClick,
   mappedKey,
   isKeyDown,
-  isBeatRepeatOn,
-  isInitialized,
   onMouseDown,
   onMouseUp,
+  isActiveKeyMapPad,
 }) => {
 
-  const [isInitialBeatRepeatHit, setInitialBeatRepeatHit] = useState(true)
+  if(isActiveKeyMapPad && isKeyMapOn) {
+    style.filter = 'saturate(3)';
+  }
 
-  useEffect(() => {
-
-    if(!isBeatRepeatOn && !isKeyDown) {
-      setInitialBeatRepeatHit(false)
-    }
-
-
-    if(!isInitialized && isKeyDown && isBeatRepeatOn) {
-      setInitialBeatRepeatHit(true);
-    }
-    
-  }, [isInitialized, isKeyDown, isBeatRepeatOn]);
-
-
-  useEffect(() => {
-
-    if(isInitialBeatRepeatHit) {
-      setTimeout(setInitialBeatRepeatHit, 20, false)
-    }
-
-    
-  }, [isInitialBeatRepeatHit]);
-
+  if(isKeyDown) {
+    style.filter = 'saturate(2)';
+  }
 
   return (
     <div class="padCol">
@@ -51,10 +32,7 @@ const Pad = ({ id,
           className,
           isKeyDown ? "backgroundBlack" : "",
         )}
-        onClick={() => {
-          onClick();
-        }
-        }
+        onClick={onClick}
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
       >
@@ -64,7 +42,6 @@ const Pad = ({ id,
               ? <button class="hiddenButton">{mappedKey}</button>
               : null
           }
-
         </div>
       </div>
     </div>

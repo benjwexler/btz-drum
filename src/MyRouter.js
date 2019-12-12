@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -12,14 +13,15 @@ import Homepage from "./Homepage";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import './transition.css';
-import MyRouter from "./MyRouter";
+import Routes from "./Routes";
 
-const App = () => {
+const MyRouter = () => {
+  // console.log('location', location)
   return (
-    <>
-    <MyRouter />
-    </>
+    <Router>
+      <Routes />
+    </Router>
   );
 }
 
-export default App;
+export default MyRouter;
