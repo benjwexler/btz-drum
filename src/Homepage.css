@@ -1,0 +1,323 @@
+/* 
+* {
+    background: black;
+    z-index: -99;
+} */
+
+@keyframes blink-caret {
+  from, to { opacity: .99  }
+  50% { opacity: 1 }
+}
+
+#header {
+  background: black;
+  background: linear-gradient(to bottom right, black 77%, #00d7d7 58%);
+  /* border: 10px dashed rgb(45, 114, 146); */
+  text-align: center;
+  height: 100px;
+  font-size: 36px;
+  font-family: 'Monoton', cursive;
+  /* align-content: center; */
+  color: rgb(0, 238, 255);
+  /* color: rgb(33, 136, 117); */
+  padding-top: 20px;
+  /* padding-top: 7px; */
+  /* text-shadow: 2px 2px #ff0000; */
+  /* text-shadow: 0px 2px #a433a8; */
+  transform: rotate(-.1deg);
+  /* text-shadow: 1px -5px #ff0000; */
+  /* text-shadow: 20px 20px #ff0000; */
+  /* text-shadow: 0px 40px #ff0000; */
+  /* animation: 
+    blink-caret .5s step-end infinite; */
+  /* text-shadow: 0px 40px #ff00007e; */
+  /* font-style: italic; */
+  
+}
+
+
+
+@media only screen and (max-width:375px) {
+  #header {
+      padding-top: 0px;
+  }
+}
+
+#title {
+  height: 50%;
+  width: 100%;
+  border: 2px solid white;
+  
+}
+
+#hi {
+  margin-top: 20%;
+  height: 100px;
+  border: 2px solid white;
+  justify-content: center;
+  color: rgb(0, 238, 255);
+  font-size: 30px;
+  font-family: 'Monoton', cursive;
+}
+
+#row1 {
+  border: 2px solid white;
+  /* border-right: 1px solid white;
+  border-bottom: 1px solid white; */
+  z-index: 99;
+  filter: blur(1px)
+  /* margin-top: 5%; */
+  /* text-align: center; */
+}
+
+#row1:hover {
+  filter: blur(0px)
+}
+#row2:hover {
+  filter: blur(0px)
+}
+#row3:hover {
+  filter: blur(0px)
+}
+#row4:hover {
+  filter: blur(0px)
+}
+
+#row2 {
+  border: 2px solid white;
+  /* border-left: 1px solid white;
+  border-bottom: 1px solid white; */
+  filter: blur(1px)
+  
+  /* margin-top: 10%; */
+}
+
+#row3 {
+  border: 2px solid white;
+  filter: blur(1px)
+  /* margin-top: 5%; */
+}
+
+#row4 {
+  border: 2px solid white;
+  filter: blur(.9px)
+  /* margin-top: 20%; */
+}
+
+#test {
+  /* background: blue; */
+  text-align: center;
+  height: 600px;
+  margin: auto;
+  background-image: url('https://media.giphy.com/media/I6oOVy0GwvGiQ/giphy.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+#centered {
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border: 25px solid rgb(48, 24, 79);
+border: 25px solid rgba(65, 110, 145, 0.324);
+/* z-index: 99; */
+/* border: 3px solid white; */
+/* font-size: 50px; */
+}
+
+#backgroundImage {
+  height: 100%;
+  width: 100%;
+}
+
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+.typewriter2 h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+  animation-delay: 500ms;
+}
+
+.typewriter3 h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+    animation-delay: 1000ms;
+}
+.typewriter4 h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+    animation-delay: 1500ms;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+/* @keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+} */
+
+#signUp {
+    margin: auto;
+    text-align: center;
+    /* border: 50px solid white; */
+    /* padding: 50px; */
+}
+
+#adToSignUp {
+  margin: auto;
+  text-align: center;
+  /* border: 50px solid white; */
+
+}
+
+#signInButton {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+  opacity: .9;
+  /* background-color: black; */
+}
+
+#signUpButton {
+  position: absolute;
+  top: 0;
+  left: 120px;
+}
+
+
+
+.dropdown-menu {
+  width: 150px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+#footer {
+  background: black;
+  height: 50px;
+  /* position: absolute; */
+  bottom: 0;
+  margin-top: 180px;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+.footsy {
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-family: monospace;
+}
+
+@keyframes buttonEnterAnimation {
+  /* from {transform: scale(0)} */
+  from {opacity: 0; transform: rotate(180deg) translate(-50%, -50%);}
+  to {opacity: .9; transform: rotate(0deg) translate(-50%, -50%);}
+}
+
+.buttonEnter {
+  animation: buttonEnterAnimation 2s 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 0%;
+  transform: translate(-50%, -50%);
+  
+  /*
+  Nope =(
+  margin-left: -25%;
+  margin-top: -25%;
+  */
+
+  /* 
+  Yep!
+  */
+  /* transform: translate(-50%, -50%); */
+  
+  /*
+  Not even necessary really. 
+  e.g. Height could be left out!
+  */
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  z-index: 999999999;
+  background: black;
+
+  border: 1px solid white;
+  color: white;
+  /* border: 3px solid black; */
+  opacity: 0;
+  font-family: monospace;
+    font-size: 35px;
+    letter-spacing: .15em; /* Adjust as needed */
+
+  
+}
+
+/* .buttonEnter:hover {
+  color: yellow,
+} */

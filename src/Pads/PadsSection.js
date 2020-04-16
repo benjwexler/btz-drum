@@ -108,6 +108,7 @@ const PadsSection = () => {
     isKeyMapOn,
     isBeatRepeatOn,
     beatRepeatVal,
+    tempo,
   } = useContext(Context);
 
   const [activeKeyMapPad, setActiveKeyMapPad] = useState(false);
@@ -124,8 +125,13 @@ const PadsSection = () => {
     sampler = new Tone.Players(soundfilesObj, () => {
     }).toMaster();
     transport = Tone.Transport;
-    Tone.Transport.bpm.value = 80;
   }, []);
+
+  useEffect(() => {
+    Tone.Transport.bpm.value = tempo;
+  }, [tempo]);
+
+
 
 
   const createSequence = (pad) => {
@@ -170,6 +176,11 @@ const PadsSection = () => {
 
 
   const handleKeyDown = (ev) => {
+    const activeElement = document.activeElement.id;
+    // User is trying to change the tempo
+    if(activeElement === "set-tempo") {
+      return;
+    }
     const keyCode = String.fromCharCode(ev.keyCode);
     const pads = keyToPadObj[keyCode];
     if (isKeyMapOn) {
@@ -256,6 +267,12 @@ const PadsSection = () => {
   useEvent('keydown', handleKeyDown);
   useEvent('keyup', handleKeyUp);
 
+  const handlePadClick = (_pad, _isKeyMapOn) => {
+    if (_isKeyMapOn) {
+      return setActiveKeyMapPad(_pad)
+    }
+  }
+
   return (
     <div className="d-flex h-100 flex-wrap">
       {
@@ -270,14 +287,9 @@ const PadsSection = () => {
               isKeyMapOn={isKeyMapOn}
               isInitialized={masterPadObj[pad].isInitialized}
               isBeatRepeatOn={isBeatRepeatOn}
-              activeKeyMapPad={activeKeyMapPad}
+              isActiveKeyMapPad={activeKeyMapPad === pad}
               isKeyDown={masterPadObj[pad].isKeyDown}
-              onClick={() => {
-                if (isKeyMapOn) {
-                  return setActiveKeyMapPad(pad)
-                }
-              }
-              }
+              onClick={() => handlePadClick(pad, isKeyMapOn)}
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
             />
