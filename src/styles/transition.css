@@ -1,0 +1,40 @@
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 700ms ease-in, transform 1s;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: all 200ms ;
+  position: absolute !important;
+  left: 0px;
+  right: 0px;
+  top: 66px;
+}
+
+.kitNameAnimation-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.kitNameAnimation-enter-active {
+  opacity: 0;
+}
+
+.kitNameAnimation-enter-done{
+  opacity: 1;
+  transition: opacity 400ms ease-in;
+}
+
+.kitNameAnimation-exit {
+  opacity: 0;
+}
