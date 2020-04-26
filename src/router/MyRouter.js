@@ -1,13 +1,13 @@
 
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
 } from "react-router-dom";
 import Routes from "./Routes";
 
 const MyRouter = () => {
   return (
-    <Router>
+    <Router basename="/">
       <Routes />
     </Router>
   );
