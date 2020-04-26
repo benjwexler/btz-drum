@@ -1,9 +1,11 @@
 {
-  "name": "btz-drum-redo",
+  "name": "btz-drum",
+  "homepage": "https://benjwexler.github.io/btz-drum",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
+    "gh-pages": "^2.2.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.invert": "^4.3.0",
     "lodash.invertby": "^4.7.0",
@@ -20,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
