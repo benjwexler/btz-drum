@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/btz-drum/static/css/main.d5b112a0.chunk.css",
-    "main.js": "/btz-drum/static/js/main.e4e7689f.chunk.js",
-    "main.js.map": "/btz-drum/static/js/main.e4e7689f.chunk.js.map",
+    "main.js": "/btz-drum/static/js/main.570bd6e8.chunk.js",
+    "main.js.map": "/btz-drum/static/js/main.570bd6e8.chunk.js.map",
     "runtime-main.js": "/btz-drum/static/js/runtime-main.a3295939.js",
     "runtime-main.js.map": "/btz-drum/static/js/runtime-main.a3295939.js.map",
     "static/js/2.87d94ad5.chunk.js": "/btz-drum/static/js/2.87d94ad5.chunk.js",
     "static/js/2.87d94ad5.chunk.js.map": "/btz-drum/static/js/2.87d94ad5.chunk.js.map",
     "index.html": "/btz-drum/index.html",
-    "precache-manifest.d6c7f0192296011c3ddf887d2a780935.js": "/btz-drum/precache-manifest.d6c7f0192296011c3ddf887d2a780935.js",
+    "precache-manifest.b29f6da38263babb526180df522fe7f7.js": "/btz-drum/precache-manifest.b29f6da38263babb526180df522fe7f7.js",
     "service-worker.js": "/btz-drum/service-worker.js",
     "static/css/main.d5b112a0.chunk.css.map": "/btz-drum/static/css/main.d5b112a0.chunk.css.map",
     "static/js/2.87d94ad5.chunk.js.LICENSE.txt": "/btz-drum/static/js/2.87d94ad5.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a3295939.js",
     "static/js/2.87d94ad5.chunk.js",
     "static/css/main.d5b112a0.chunk.css",
-    "static/js/main.e4e7689f.chunk.js"
+    "static/js/main.570bd6e8.chunk.js"
   ]
 }
