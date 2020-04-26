@@ -11,6 +11,7 @@
     "lodash.invertby": "^4.7.0",
     "lodash.pick": "^4.4.0",
     "react": "^16.12.0",
+    "react-div-100vh": "^0.3.8",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
