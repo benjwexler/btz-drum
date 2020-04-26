@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/btz-drum/static/css/main.10684bed.chunk.css",
+    "main.js": "/btz-drum/static/js/main.86db55a7.chunk.js",
+    "main.js.map": "/btz-drum/static/js/main.86db55a7.chunk.js.map",
+    "runtime-main.js": "/btz-drum/static/js/runtime-main.a3295939.js",
+    "runtime-main.js.map": "/btz-drum/static/js/runtime-main.a3295939.js.map",
+    "static/js/2.9c628bdd.chunk.js": "/btz-drum/static/js/2.9c628bdd.chunk.js",
+    "static/js/2.9c628bdd.chunk.js.map": "/btz-drum/static/js/2.9c628bdd.chunk.js.map",
+    "index.html": "/btz-drum/index.html",
+    "precache-manifest.24791e737438520b1bf9eae9cf054d6f.js": "/btz-drum/precache-manifest.24791e737438520b1bf9eae9cf054d6f.js",
+    "service-worker.js": "/btz-drum/service-worker.js",
+    "static/css/main.10684bed.chunk.css.map": "/btz-drum/static/css/main.10684bed.chunk.css.map",
+    "static/js/2.9c628bdd.chunk.js.LICENSE.txt": "/btz-drum/static/js/2.9c628bdd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a3295939.js",
+    "static/js/2.9c628bdd.chunk.js",
+    "static/css/main.10684bed.chunk.css",
+    "static/js/main.86db55a7.chunk.js"
+  ]
+}
