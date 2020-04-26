@@ -7,7 +7,7 @@ import Routes from "./Routes";
 
 const MyRouter = () => {
   return (
-    <Router basename="/">
+    <Router>
       <Routes />
     </Router>
   );

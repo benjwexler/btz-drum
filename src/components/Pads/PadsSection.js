@@ -138,6 +138,7 @@ const PadsSection = () => {
         setMasterPadObj(masterPadObj);
       }, [true, false], `${beatRepeatVal * 2}n`);
       masterPadObj[pad].sequence.start();
+      console.log('BL:AH')
       transport.start()
     } catch (err) {
       console.log('err', err)
@@ -206,6 +207,10 @@ const PadsSection = () => {
   const handleMouseDown = (ev) => {
     try {
     const pad = ev.currentTarget.id;
+    console.log('sampler', sampler.context.state)
+    if (sampler.context.state !== 'running') {
+      sampler.context.resume();
+    }
     sampler.get(pad).start();
     masterPadObj[pad].isKeyDown = true;
     setMasterPadObj(masterPadObj);

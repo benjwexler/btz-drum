@@ -4,6 +4,7 @@ import KitchenSink from './KitchenSink';
 import ContextProvider from '../store/Context';
 
 function DrumPage() {
+  console.log('is this rendering')
   return (
     <div className="App">
     <ContextProvider>

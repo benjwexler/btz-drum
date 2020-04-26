@@ -10,13 +10,12 @@ function Homepage() {
       <div style={{
         maxWidth: '1350px', padding: '0px',
         padding: 0,
-        // height: 'calc(100vh - 66px)',
-        height: '100%',
+        height: 'calc(100vh - 66px)',
         width: '100vw',
-        // minHeight: 502,
+        minHeight: 502,
         position: 'relative'
       }} className="container p-0 p-lg-3 p-xl-5">
-        <Link to="/drum">
+        <Link to="/drum" className="d-none d-sm-inline">
           <div style={{ height: '100%' }} id="test" className="row">
             <div id="row1" className="col-sm-12 col-md-6 col-lg-6 ">
               <div className="typewriter">
@@ -43,6 +42,14 @@ function Homepage() {
           </div>
           <ButtonEnter />
         </Link>
+        <div className="d-block d-sm-none mt-5 mx-4">
+          <div>
+            BTZ Drum does not currently work on mobile browsers. Please use a desktop or laptop computer to start making beats.
+          </div>
+          <div className="mt-4">
+            Created by <a href="https://www.linkedin.com/in/benjwexler/">Ben Wexler</a>
+          </div>
+        </div>
       </div>
     </>
   );
