@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/btz-drum/static/css/main.10684bed.chunk.css",
-    "main.js": "/btz-drum/static/js/main.8444077c.chunk.js",
-    "main.js.map": "/btz-drum/static/js/main.8444077c.chunk.js.map",
+    "main.css": "/btz-drum/static/css/main.d5b112a0.chunk.css",
+    "main.js": "/btz-drum/static/js/main.e9a4150a.chunk.js",
+    "main.js.map": "/btz-drum/static/js/main.e9a4150a.chunk.js.map",
     "runtime-main.js": "/btz-drum/static/js/runtime-main.a3295939.js",
     "runtime-main.js.map": "/btz-drum/static/js/runtime-main.a3295939.js.map",
-    "static/js/2.ceb33e79.chunk.js": "/btz-drum/static/js/2.ceb33e79.chunk.js",
-    "static/js/2.ceb33e79.chunk.js.map": "/btz-drum/static/js/2.ceb33e79.chunk.js.map",
+    "static/js/2.45d9f784.chunk.js": "/btz-drum/static/js/2.45d9f784.chunk.js",
+    "static/js/2.45d9f784.chunk.js.map": "/btz-drum/static/js/2.45d9f784.chunk.js.map",
     "index.html": "/btz-drum/index.html",
-    "precache-manifest.c66cad8ebe08bab7d6a63b4358a6649d.js": "/btz-drum/precache-manifest.c66cad8ebe08bab7d6a63b4358a6649d.js",
+    "precache-manifest.d616466cbd4ba4ab49e147512b73257d.js": "/btz-drum/precache-manifest.d616466cbd4ba4ab49e147512b73257d.js",
     "service-worker.js": "/btz-drum/service-worker.js",
-    "static/css/main.10684bed.chunk.css.map": "/btz-drum/static/css/main.10684bed.chunk.css.map",
-    "static/js/2.ceb33e79.chunk.js.LICENSE.txt": "/btz-drum/static/js/2.ceb33e79.chunk.js.LICENSE.txt"
+    "static/css/main.d5b112a0.chunk.css.map": "/btz-drum/static/css/main.d5b112a0.chunk.css.map",
+    "static/js/2.45d9f784.chunk.js.LICENSE.txt": "/btz-drum/static/js/2.45d9f784.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a3295939.js",
-    "static/js/2.ceb33e79.chunk.js",
-    "static/css/main.10684bed.chunk.css",
-    "static/js/main.8444077c.chunk.js"
+    "static/js/2.45d9f784.chunk.js",
+    "static/css/main.d5b112a0.chunk.css",
+    "static/js/main.e9a4150a.chunk.js"
   ]
 }
