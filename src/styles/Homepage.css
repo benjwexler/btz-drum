@@ -107,7 +107,8 @@
 #test {
   /* background: blue; */
   text-align: center;
-  height: 600px;
+  /* height: 600px; */
+  height: 100%;
   margin: auto;
   background-image: url('https://media.giphy.com/media/I6oOVy0GwvGiQ/giphy.gif');
   background-position: center;

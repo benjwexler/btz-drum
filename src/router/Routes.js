@@ -14,9 +14,9 @@ import '../styles/transition.css';
 
 const Routes = ({ location }) => {
   return (
-    <div>
+    <div style={{height: 'calc(100% - 66px)'}}>
       <Nav />
-      <TransitionGroup>
+      <TransitionGroup style={{height: '100%'}}>
         <CSSTransition
           key={location.pathname}
           appear
