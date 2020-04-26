@@ -204,11 +204,15 @@ const PadsSection = () => {
   };
 
   const handleMouseDown = (ev) => {
+    try {
     const pad = ev.currentTarget.id;
     sampler.get(pad).start();
     masterPadObj[pad].isKeyDown = true;
     setMasterPadObj(masterPadObj);
     setToggle(!toggle)
+    } catch (err) {
+      
+    }
   };
 
   const handleMouseUp = (ev) => {

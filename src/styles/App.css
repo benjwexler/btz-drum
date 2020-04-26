@@ -8,7 +8,8 @@ body {
     background: #00d7d715;
     background: #e5e9ad;
     background: rgba(129, 140, 143, 0.397);
-    background: linear-gradient(to left, rgb(240, 239, 239) 27%, rgba(129, 140, 143, 0.2) 58%)
+    background: linear-gradient(to left, rgb(240, 239, 239) 27%, rgba(129, 140, 143, 0.2) 58%);
+    margin: 0px;
 }   
   
 .navbar {

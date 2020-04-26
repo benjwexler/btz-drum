@@ -10,9 +10,10 @@ function Homepage() {
       <div style={{
         maxWidth: '1350px', padding: '0px',
         padding: 0,
-        height: 'calc(100vh - 66px)',
+        // height: 'calc(100vh - 66px)',
+        height: '100%',
         width: '100vw',
-        minHeight: 502,
+        // minHeight: 502,
         position: 'relative'
       }} className="container p-0 p-lg-3 p-xl-5">
         <Link to="/drum">
