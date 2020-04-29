@@ -163,6 +163,14 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     transform: rotate(.1deg);
 }
 
+@media only screen and (max-height: 800px) {
+    #mainContainer {
+        margin-top: 5vh;
+        
+    }
+
+}
+
 @media only screen and (max-width: 576px) {
     #mainContainer {
         margin-top: 10vh;
