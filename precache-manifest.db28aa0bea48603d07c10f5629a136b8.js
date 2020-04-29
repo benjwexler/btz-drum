@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0d157b225c43de840493193c7b0ff805",
+    "revision": "50185e5c462d883edcaa25b3b757b562",
     "url": "/btz-drum/index.html"
   },
   {
-    "revision": "ca08886da8413eb3230f",
-    "url": "/btz-drum/static/css/main.102c3461.chunk.css"
+    "revision": "35b457de228a2cecf5c4",
+    "url": "/btz-drum/static/css/main.93d8fe0f.chunk.css"
   },
   {
     "revision": "4b51336e1b4f321295f4",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/btz-drum/static/js/2.ceb33e79.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ca08886da8413eb3230f",
+    "revision": "35b457de228a2cecf5c4",
     "url": "/btz-drum/static/js/main.9bebaadc.chunk.js"
   },
   {
